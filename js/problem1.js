@@ -19,7 +19,6 @@
 
 */
 
-
 function changeElementText(element, answer) {
     $(element).text(answer);
 }
@@ -27,8 +26,23 @@ function changeElementText(element, answer) {
 function kiteGame(numberOfKites) {
     changeElementText("#numberOfKites", numberOfKites);
     var answer = "";
+    var PECHE ="Peche! "
+    var IPO = "Ipo kaate! "
 
-    // write some code here!
+    for(var kite=1; kite<=numberOfKites;kite++){
+        if (kite%5==0 && kite%3==0){
+            answer = answer.concat(PECHE, IPO);
+        }
+        else if(kite%3==0 ){
+            answer = answer.concat(PECHE);
+        }
+        else if (kite%5==0){
+            answer = answer.concat(IPO);
+        }
+        else{
+        answer = answer.concat(kite, " ");
+        }
+    }
 
     changeElementText("#answer", answer);
 }

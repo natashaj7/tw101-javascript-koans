@@ -7,12 +7,14 @@ $(document).ready(function() {
     isTrafficJam(30, false);
 
     // Problem 3
-    fareForRide(6, 8, false);
+    fareForRide(3.5, 4, true);
 
     // Problem 4
-    // call your problem 4 code here
+    countMoney(20, 50, 5, 1000, 30, 65, 80, 90);
 
     // Problem 5
-    // call your problem 5 code here
+    newspaperAdFix(["zara", "dhyaan", "dein"],
+                   ["mazarat", "chahenge"],
+                   ["attention", "please"]);
 
 });

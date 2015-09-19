@@ -33,4 +33,32 @@
      count: 7
  */
 
-// Write your JavaScript here
+
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function newspaperAdFix() {
+    var adWords="";
+    var hinduAdLine="";
+    var urduAdLine="";
+    var englishAdLine="";
+    var count = 0;
+    hinduAdLine = arguments[0].join(" ");
+    urduAdLine=arguments[1].join(" ");
+    englishAdLine=arguments[2].join(" ");
+
+    arguments[1].reverse();
+    for(var i=0; i<arguments.length; i++){
+        for(var j=0; j<arguments[i].length; j++){
+            adWords = adWords.concat(arguments[i][j], " ");
+            count++;
+        }
+    }
+    changeElementText("#adTextLine1", hinduAdLine);
+    changeElementText("#adTextLine2", urduAdLine);
+    changeElementText("#adTextLine3", englishAdLine);
+    changeElementText("#result", adWords);
+    changeElementText("#count", count);
+}
+

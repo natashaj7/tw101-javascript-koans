@@ -26,4 +26,37 @@
 
 */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function countMoney() {
+
+    var total=0;
+    var money=[];
+    var acceptableNotes = [5, 10, 20, 50, 100, 500, 1000];
+    var isAcceptable=false;
+
+    for (var i=0; i<arguments.length; i++){
+        money[i]=arguments[i];
+    }
+
+    for(var i=0; i<arguments.length; i++){
+       for(var j=0; j<acceptableNotes.length; j++){
+            if(acceptableNotes[j]== arguments[i]){
+                isAcceptable=true;
+            }
+       }
+       if(isAcceptable){
+            total+=arguments[i];
+            isAcceptable=false;
+       }
+       else{
+            break;
+       }
+    }
+    changeElementText("#money", money.toString());
+    changeElementText("#total", total);
+
+    }
+
